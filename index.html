@@ -12,6 +12,9 @@
         position: absolute;
         bottom: 110px;
       }
+      .redbutton:active {
+        background-color: darkred;
+      }
       .graybutton {
         width: 100px; 
         height: 50px; 
@@ -20,6 +23,16 @@
         background-color: lightgray;
         position: absolute;
         bottom: 20px;
+      }
+      .graybutton:active {
+        background-color: darkgray;
+      }
+      #gamescreen {
+        background-color: darkkhaki;
+        position: absolute;
+        width: 500px;
+        height: 300px;
+        top: 40px;
       }
     </style>
   </head>
@@ -30,8 +43,8 @@
   <script>
     function setgraybuttons() {
       rbutton = document.getElementById("rbutton")
-      x = (rbutton.offsetLeft+20)/2
-      document.getElementById("gamebody").innerHTML += '<button class="graybutton" style="right: '+x+'px;">&nbsp;</button><button class="graybutton" style="right: '+(x+120)+'px;">&nbsp;</button><button class="graybutton" style="right: '+(x-120)+'px;">&nbsp;</button>'
+      var x = (rbutton.offsetLeft+20)/2
+      document.getElementById("gamebody").innerHTML += '<button class="graybutton" style="right: '+x+'px;">&nbsp;</button><button class="graybutton" style="right: '+(x+120)+'px;">&nbsp;</button><button class="graybutton" style="right: '+(x-120)+'px;">&nbsp;</button><div id="gamescreen" style="right: '+(x-190)+'px;">&nbsp</div>'
     }
     window.onload = setgraybuttons()
   </script>
