@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Alien</title>
+    <link href="logo.png" rel="icon">
     <style>
       .redbutton {
         width: 100px; 
@@ -30,21 +31,22 @@
       #gamescreen {
         background-color: darkkhaki;
         position: absolute;
-        width: 500px;
-        height: 300px;
-        top: 40px;
+        border: 8px solid black;
+        width: 484px;
+        height: 284px;
+        bottom: 80px;
       }
     </style>
   </head>
   <body id="gamebody">
-    <button id="lbutton" class="redbutton" style="left: 20px;">&nbsp;</button>
-    <button id="rbutton" class="redbutton" style="right: 20px;">&nbsp;</button>
+    <button id="lbutton" class="redbutton" style="left: 20px;">⬅<br>Select</button>
+    <button id="rbutton" class="redbutton" style="right: 20px;">➡<br>AI. Time</button>
   </body>
   <script>
     function setgraybuttons() {
       rbutton = document.getElementById("rbutton")
       var x = (rbutton.offsetLeft+20)/2
-      document.getElementById("gamebody").innerHTML += '<button class="graybutton" style="right: '+x+'px;">&nbsp;</button><button class="graybutton" style="right: '+(x+120)+'px;">&nbsp;</button><button class="graybutton" style="right: '+(x-120)+'px;">&nbsp;</button><div id="gamescreen" style="right: '+(x-190)+'px;">&nbsp</div>'
+      document.getElementById("gamebody").innerHTML += '<button class="graybutton" style="right: '+x+'px;">Game A/B<br>Set</button><button class="graybutton" style="right: '+(x+120)+'px;">Mode<br>AI. Set</button><button class="graybutton" style="right: '+(x-120)+'px;">Date<br>Start</button><div id="gamescreen" style="right: '+(x-200)+'px;">&nbsp</div>'
     }
     window.onload = setgraybuttons()
   </script>
