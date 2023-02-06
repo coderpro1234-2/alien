@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alien</title>
+    <style>
+      .redbutton {
+        width: 100px; 
+        height: 100px; 
+        border-radius: 100%; 
+        border: none; 
+        background-color: red;
+        position: absolute;
+        bottom: 110px;
+      }
+      .graybutton {
+        width: 100px; 
+        height: 50px; 
+        border-radius: 40%; 
+        border: none; 
+        background-color: lightgray;
+        position: absolute;
+        bottom: 20px;
+      }
+    </style>
+  </head>
+  <body id="gamebody">
+    <button id="lbutton" class="redbutton" style="left: 20px;">&nbsp;</button>
+    <button id="rbutton" class="redbutton" style="right: 20px;">&nbsp;</button>
+  </body>
+  <script>
+    function setgraybuttons() {
+      rbutton = document.getElementById("rbutton")
+      x = (rbutton.offsetLeft+20)/2
+      document.getElementById("gamebody").innerHTML += '<button class="graybutton" style="right: '+x+'px;">&nbsp;</button><button class="graybutton" style="right: '+(x+120)+'px;">&nbsp;</button><button class="graybutton" style="right: '+(x-120)+'px;">&nbsp;</button>'
+    }
+    window.onload = setgraybuttons()
+  </script>
+</html>
